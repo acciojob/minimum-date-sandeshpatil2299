@@ -1,5 +1,21 @@
 function minDate(dates) {
   //write you code here
+	let temp= [];
+	for(let date of dates) {
+		temp.push(date.split("/"));
+	}
+
+	let minYear= Infinity;
+	let minMonth= Infinity;
+	let minDay= Infinity;
+
+	for(let value of temp) {
+		minYear= Math.min(minYear, parseInt(value[0]));
+		minMonth= Math.min(minMonth, parseInt(value[1]));
+		minDay= Math.min(minDay, parseInt(value[2]));
+	}
+
+	return `${minYear}/${minMonth}/${minDay}`;
 }
 
 // Do not change the code
